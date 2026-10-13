@@ -1,4 +1,7 @@
-import java.util.Scanner;
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
 
 public class ZooManagement {
     public static void main(String[] args) {
@@ -6,16 +9,15 @@ public class ZooManagement {
         System.out.println("------------------");
         System.out.println("------------------");
         System.out.println("------------------");
-        a.family = "king of the jungle";
-        a.name = "simba";
-        a.age = 10;
-        a.isMammal = true;
+        a.setFamily("king of the jungle");
+        a.setName("simba");
+        a.setAge(10);
+        a.setMammal(true);
         System.out.println(a);
 
         Zoo z = new Zoo();
-        z.name = "esprit";
-        z.city = "ariana";
-        z.nbrCages = 21;
+        z.setName("esprit");
+        z.setCity("ariana");
 
 
         System.out.println("instruction 8 : ");
@@ -26,7 +28,6 @@ public class ZooManagement {
         z.addAnimal(a);
         z.dispalyAnimals();
         System.out.println("index equals : " + z.searchAnimal("simba"));
-
 
 
     }
