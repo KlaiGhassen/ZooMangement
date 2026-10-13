@@ -1,38 +1,73 @@
-import java.util.Arrays;
+package tn.esprit.gestionzoo.entities;
 
 public class Zoo {
-    Animal[] animals;
-    String name, city;
-    static final int NBR_CAGES = 25;
-    int nbrAnimals;
+    protected Animal[] animals;
+    protected String name, city;
+    protected int nbrAnimals;
+    private static final int NBR_CAGES = 25;
 
-
-    Zoo() {
+  public   Zoo() {
         this.animals = new Animal[25];
     }
 
-    Zoo(String name, String city) {
+  public   Zoo(String name, String city) {
         this.animals = new Animal[NBR_CAGES];
         this.name = name;
         this.city = city;
     }
 
-    Zoo(String name, String city, Animal[] animals) {
+   public Zoo(String name, String city, Animal[] animals) {
         this.name = name;
         this.city = city;
         this.animals = animals;
     }
 
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(Animal[] animals) {
+        this.animals = animals;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (!name.isEmpty()) {
+            this.name = name;
+        } else {
+            System.out.println("name is empty");
+        }
+    }
+
+    public int getNbrAnimals() {
+        return nbrAnimals;
+    }
+
+    public void setNbrAnimals(int nbrAnimals) {
+        this.nbrAnimals = nbrAnimals;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public String toString() {
-        return "Zoo{" +
+        return "tn.esprit.gestionzoo.entities.Zoo{" +
                 ", name='" + name + '\'' +
                 ", city='" + city + '\'' +
                 ", nbrCages=" + NBR_CAGES +
                 '}';
     }
 
-    boolean addAnimal(Animal animal) {
-        if (this.searchAnimal(animal.name) == -1 && this.nbrAnimals < NBR_CAGES) {
+    public boolean addAnimal(Animal animal) {
+        if (!isZooFull()) {
             this.animals[nbrAnimals] = animal;
             nbrAnimals++;
             return true;
@@ -47,7 +82,7 @@ public class Zoo {
         }
     }
 
-    int searchAnimal(String name) {
+    public  int searchAnimal(String name) {
         for (int i = 0; i < this.nbrAnimals; i++) {
             if (animals[i].name.equals(name)) {
                 return i;
