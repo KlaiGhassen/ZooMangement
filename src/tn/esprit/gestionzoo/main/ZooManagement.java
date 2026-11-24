@@ -1,7 +1,6 @@
 package tn.esprit.gestionzoo.main;
 
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.*;
 
 public class ZooManagement {
     public static void main(String[] args) {
@@ -28,6 +27,14 @@ public class ZooManagement {
         z.addAnimal(a);
         z.dispalyAnimals();
         System.out.println("index equals : " + z.searchAnimal("simba"));
+
+
+        Aquatic aquatic = new Aquatic("test aquatic", "water animals", 30, false, "habitat");
+        Dolphin dolphin = new Dolphin();
+        Penguin penguin = new Penguin();
+        aquatic.swim(); // a quatic swiming
+        dolphin.swim(); // This dolphin is swimming
+        penguin.swim();
 
 
     }

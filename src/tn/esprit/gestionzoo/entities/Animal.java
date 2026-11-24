@@ -61,6 +61,7 @@ public class Animal {
         return age;
     }
 
+
     public void setAge(int age) {
         if (age > 0) {
             this.age = age;
@@ -72,6 +73,7 @@ public class Animal {
     public boolean isMammal() {
         return isMammal;
     }
+
 
     public void setMammal(boolean mammal) {
         isMammal = mammal;
