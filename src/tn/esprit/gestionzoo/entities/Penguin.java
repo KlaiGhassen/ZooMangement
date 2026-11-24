@@ -28,4 +28,8 @@ public class Penguin extends Aquatic{
                 ", isMammal=" + isMammal +
                 '}';
     }
+
+    public float maxPenguinSwimmingDepth(){
+        return this.swimmingDepth;
+    }
 }

@@ -35,3 +35,4 @@ public class Dolphin extends Aquatic {
         System.out.println("This dolphin is swimming");
     }
 }
+
